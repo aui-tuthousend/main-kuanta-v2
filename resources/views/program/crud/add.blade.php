@@ -23,7 +23,7 @@
         <select class="tags form-control"
                 id="tags"
                 name="tags[]"
-                multiple="multiple"
+{{--                multiple="multiple"--}}
         ></select>
 {{--    </div>--}}
 

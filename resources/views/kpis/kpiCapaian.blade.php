@@ -24,7 +24,11 @@
     </div>
     <ol class="list-group list-group-numbered">
         {{--        <a href='{{route('program', "CT")}}' class="list-group-item">Revenue 3M</a>--}}
-                <a href='{{route('program', "Revenue")}}' class="list-group-item">Revenue 3M</a>
+        <a href='{{route('program', "Revenue")}}' class="list-group-item">Revenue 3M</a>
+        @foreach($kpis as $kpi)
+            <a href='{{route('program', $kpi->judul)}}' class="list-group-item">{{$kpi->judul}}</a>
+
+        @endforeach
 {{--        judul kpi as parameter  --}}
     </ol>
 

@@ -21,3 +21,25 @@ Route::controller(\App\Http\Controllers\SesiController::class)->group(function (
 
 });
 
+Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
+    Route::get('/', 'index');
+    Route::get('/{kpis}/program', 'indexProgram')->name('program');
+    Route::get('/{program}/kegiatan', 'indexKegiatan')->name('kegiatan');
+
+    Route::get('/{program}/kegiatan/addkegiatan', 'addKegiatan')->name('addkegiatan');
+
+    Route::post("users", "getUser")->name('getUser');
+});
+
+Route::controller(\App\Http\Controllers\ProgramController::class)->group(function () {
+    Route::get('/{kpis}/program/addprogram', 'create')->name('addprogram');
+    Route::post("programs", "store");
+
+});
+
+Route::controller(\App\Http\Controllers\NavbarController::class)->group(function (){
+    Route::get('/kpiscapaian/{circle}', 'indexCapaian')->name('capaian');
+    Route::get('/kpistarget/{circle}', 'indexTarget')->name('target');
+
+});
+
