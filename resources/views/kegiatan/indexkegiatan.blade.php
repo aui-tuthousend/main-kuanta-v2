@@ -15,22 +15,24 @@
         </tr>
         </thead>
         <tbody>
+        @foreach($kegiatans as $keg)
         <tr >
-            <td class="align-middle">ini judul Program</td>
-            <td class="align-middle">ini judul Kegiatan</td>
-            <td class="align-middle">Kuanta Institute</td>
-            <td class="align-middle">10 juta</td>
-            <td class="align-middle">7 juta</td>
-            <td class="align-middle">Menangani pasien</td>
-            <td class="align-middle">Dimyadi</td>
-            <td class="align-middle">20 Agustus</td>
-            <td class="align-middle">on progress</td>
-            <td class="align-middle" style="text-align: center;">81%</td>
+            <td class="align-middle">{{$keg->judul_program}}</td>
+            <td class="align-middle">{{$keg->judul}}</td>
+            <td class="align-middle">{{$keg->circle}}</td>
+            <td class="align-middle">{{$keg->target}}</td>
+            <td class="align-middle">{{$keg->capaian}}</td>
+            <td class="align-middle">{{$keg->catatan}}</td>
+            <td class="align-middle">{{$keg->user_name}}</td>
+            <td class="align-middle">{{$keg->deadline}}</td>
+            <td class="align-middle">{{$keg->status}}</td>
+            <td class="align-middle" style="text-align: center;">{{$keg->achieved}}</td>
             <td class="align-middle">
                 <a href="#" class="btn btn-warning">edit</a>
                 <a href="#" class="btn btn-danger">delete</a>
             </td>
         </tr>
+        @endforeach
         </tbody>
     </table>
 
