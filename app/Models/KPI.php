@@ -17,4 +17,12 @@ class KPI extends Model
         'circle',
         'tipe'
     ];
+
+    public function program(){
+        return$this->hasMany(Program::class,'id_kpi');
+    }
+
+    public function kegiatan(){
+        return$this->hasMany(Kegiatan::class,'id_kpi');
+    }
 }

@@ -28,4 +28,6 @@ class Kegiatan extends Model
         'achieved',
 
     ];
+
+
 }

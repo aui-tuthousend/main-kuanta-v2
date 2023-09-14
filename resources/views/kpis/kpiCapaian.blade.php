@@ -14,19 +14,17 @@
                 Other Circle
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="{{route('capaian', "CT")}}">Creative Technology</a></li>
-                <li><a class="dropdown-item" href="{{route('capaian', "KI")}}">Kuanta Institute</a></li>
-                <li><a class="dropdown-item" href="{{route('capaian', "OP")}}">Operation</a></li>
-                <li><a class="dropdown-item" href="{{route('capaian', "PS")}}">Partnership</a></li>
-                <li><a class="dropdown-item" href="{{route('capaian', "SD")}}">School Design</a></li>
+                @foreach($cir as $c)
+                    <li><a class="dropdown-item" href="{{route('capaian', $c)}}">{{$c}}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>
     <ol class="list-group list-group-numbered">
         {{--        <a href='{{route('program', "CT")}}' class="list-group-item">Revenue 3M</a>--}}
-        <a href='{{route('program', "Revenue")}}' class="list-group-item">Revenue 3M</a>
+{{--        <a href='{{route('program', 2)}}' class="list-group-item">Revenue 3M</a>--}}
         @foreach($kpis as $kpi)
-            <a href='{{route('program', $kpi->judul)}}' class="list-group-item">{{$kpi->judul}}</a>
+        <a href='{{route('program', $kpi->id)}}' class="list-group-item">{{$kpi->judul}}</a>
 
         @endforeach
 {{--        judul kpi as parameter  --}}

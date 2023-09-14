@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Auth;
 class NavbarController extends Controller
 {
     public function indexCapaian($circle){
-        $user = Auth::user();
-        $kpis = KPI::where('circle', $user->circle)->orderBy('created_at', 'DESC');
+        $cir = ['executive', 'creative technology', 'school design', 'operation', 'partnership', 'kuanta institute'];
+        $kpis = KPI::where('circle', $circle)->orderBy('created_at', 'DESC')->get();
 
-        return view('kpis.kpiCapaian', compact('circle', 'kpis'));
+        return view('kpis.kpiCapaian', compact( 'kpis', 'cir', 'circle'));
     }
 
     public function indexTarget($circle){

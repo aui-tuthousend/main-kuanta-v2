@@ -17,4 +17,11 @@ class Program extends Model
         'pj',
         'status',
     ];
+
+    public function kegiatan(){
+        return$this->hasMany(Kegiatan::class,'id_program');
+    }
+    public function kpis (){
+        return $this->belongsTo(KPI::class, 'id_kpi');
+    }
 }

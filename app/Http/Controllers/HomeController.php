@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
+use App\Models\KPI;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,9 +30,10 @@ class HomeController extends Controller
     }
 
 //    <--------------------- Program --------------------->
-    public function indexProgram($kpis){
+    public function indexProgram($id){
+        $programs = KPI::with('program')->findOrFail($id);
 
-        return view('program.indexprogram');
+        return view('program.indexprogram', compact('programs'));
     }
 
     public function addProgram($kpis){

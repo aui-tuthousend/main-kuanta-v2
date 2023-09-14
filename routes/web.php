@@ -23,7 +23,10 @@ Route::controller(\App\Http\Controllers\SesiController::class)->group(function (
 
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('/', 'index');
-    Route::get('/{kpis}/program', 'indexProgram')->name('program');
+
+    Route::get('/{id}/program', 'indexProgram')->name('program');
+
+
     Route::get('/{program}/kegiatan', 'indexKegiatan')->name('kegiatan');
 
     Route::get('/{program}/kegiatan/addkegiatan', 'addKegiatan')->name('addkegiatan');
