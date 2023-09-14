@@ -45,10 +45,11 @@ class HomeController extends Controller
 
 //    <--------------------- Kegiatan --------------------->
 
-    public function indexKegiatan($id){
+    public function indexKegiatan($program){
+        $kegiatans = Kegiatan::where('judul_program', $program)->orderBy('created_at', 'DESC')->get();
         $loop=['Judul Program', 'Judul Kegiatan', 'Circle', 'Target', 'Capaian', 'Catatan', 'Username', 'Deadline', 'Status', 'Presentase Ketercapaian', 'Action'];
 
-        return view('kegiatan.indexkegiatan', compact('loop'));
+        return view('kegiatan.indexkegiatan', compact('loop', 'kegiatans'));
     }
 
     public function addKegiatan($program){

@@ -18,14 +18,16 @@
         </tr>
         </thead>
         <tbody>
+        @foreach($programs->program as $pro)
         <tr onclick="window.location='{{ route('kegiatan', "programnya apa") }}';" style="cursor: pointer;">
-            <td class="align-middle">ini judul KPI's</td>
-            <td class="align-middle">ini judul Program</td>
-            <td class="align-middle">Kuanta Institute</td>
-            <td class="align-middle">Jaki</td>
-            <td class="align-middle">On Progress</td>
-            <td class="align-middle">8</td>
+            <td class="align-middle">{{$pro->judul_kpi}}</td>
+            <td class="align-middle">{{$pro->judul}}</td>
+            <td class="align-middle">{{$pro->circle}}</td>
+            <td class="align-middle">{{$pro->pj}}</td>
+            <td class="align-middle">{{$pro->status}}</td>
+            <td class="align-middle">{{}}</td>
         </tr>
+        @endforeach
         </tbody>
     </table>
 
