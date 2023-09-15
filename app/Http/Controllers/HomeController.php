@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
 use App\Models\KPI;
+use App\Models\Program;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,7 @@ class HomeController extends Controller
     {
         $list = ['Judul Program','Circle','Judul Kegiatan','Target','Catatan','Capaian','Action',];
         $user = Auth::user();
-        $kegiatan = Kegiatan::where('id_user', $user->id)->orderBy('created_at', 'DESC');
+        $kegiatan = Kegiatan::where('id_user', $user->id)->orderBy('created_at', 'DESC')->get();
         return view('homepage.index', compact('kegiatan', 'list'));
     }
 
@@ -45,9 +46,9 @@ class HomeController extends Controller
 
 //    <--------------------- Kegiatan --------------------->
 
-    public function indexKegiatan($program){
-        $kegiatans = Kegiatan::where('judul_program', $program)->orderBy('created_at', 'DESC')->get();
-        $loop=['Judul Program', 'Judul Kegiatan', 'Circle', 'Target', 'Capaian', 'Catatan', 'Username', 'Deadline', 'Status', 'Presentase Ketercapaian', 'Action'];
+    public function indexKegiatan($id){
+        $kegiatans = Program::with('kegiatan')->findOrFail($id);
+        $loop=['Judul Kegiatan', 'Circle', 'Target', 'Capaian', 'Catatan', 'Username', 'Deadline', 'Status', 'Presentase Ketercapaian', 'Action'];
 
         return view('kegiatan.indexkegiatan', compact('loop', 'kegiatans'));
     }

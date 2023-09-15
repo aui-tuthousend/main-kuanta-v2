@@ -1,6 +1,6 @@
 @extends('homepage.home')
 @section('content')
-    <h1 >Halo Disana </h1>
+    <h1 >Halo {{\Illuminate\Support\Facades\Auth::user()->name}} </h1>
     <div class="d-flex align-items-center justify-content-between">
         <h2 class="mb-0">List Kegiatan</h2>
 {{--        <a href='/addtask' class="btn btn-dark">Add Task + </a>--}}
@@ -24,7 +24,7 @@
                 <td class="align-middle">{{$keg->catatan}}</td>
                 <td class="align-middle">{{$keg->capaian}}</td>
                 <td class="align-middle">
-                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#update">update capaian</a>
+                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#update" >update capaian</a>
                     <a href="{{ route('kegiatan', "programnya apa") }}" class="btn btn-info">detail</a>
                 </td>
             </tr>

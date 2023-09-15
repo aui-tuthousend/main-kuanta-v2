@@ -2,7 +2,7 @@
 @section('indexkegiatan')
 
     <div class="d-flex align-items-center justify-content-between">
-        <h2 class="mb-0">List Kegiatan dari Program...</h2>
+        <h2 class="mb-0">List Kegiatan dari Program {{$kegiatans->judul}}</h2>
         <a href='{{route('addkegiatan', "program")}}' class="btn btn-dark">Add Kegiatan + </a>
     </div>
 
@@ -15,9 +15,8 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($kegiatans as $keg)
+        @foreach($kegiatans->kegiatan as $keg)
         <tr >
-            <td class="align-middle">{{$keg->judul_program}}</td>
             <td class="align-middle">{{$keg->judul}}</td>
             <td class="align-middle">{{$keg->circle}}</td>
             <td class="align-middle">{{$keg->target}}</td>
