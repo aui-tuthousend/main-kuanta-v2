@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <label for="inputGroup1">Quantity</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="inputGroup1" placeholder="Masukkan Capaian">
+                                    <input type="text" class="form-control" id="inputGroup1" value="{{$keg->capaian}}" placeholder="Masukkan Capaian">
                                 </div>
                             </div>
                         </div>

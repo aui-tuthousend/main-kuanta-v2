@@ -3,7 +3,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <h2 class="mb-0">List Program dari KPI's {{$programs->judul}}</h2>
-                <a href='{{route('addprogram', "Revenue")}}' class="btn btn-dark">Add Program + </a>
+                <a href='{{route('addprogram', $id)}}' class="btn btn-dark">Add Program + </a>
     </div>
 
     <table class="table table-hover mt-3 table-bordered">

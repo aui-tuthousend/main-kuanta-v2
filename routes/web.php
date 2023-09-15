@@ -24,6 +24,7 @@ Route::controller(\App\Http\Controllers\NavbarController::class)->group(function
 
 Route::controller(\App\Http\Controllers\ProgramController::class)->group(function () {
     Route::get('/{kpis}/program/addprogram', 'create')->name('addprogram');
-    Route::post("programs", "store");
+    Route::post('/{kpis}/program/addprogram', "store")->name('storeprogram');
+
 })->middleware(['auth']);
 
