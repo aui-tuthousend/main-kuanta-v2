@@ -13,7 +13,6 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/{id}/program', 'indexProgram')->name('program');
 
     Route::get('/{id}/kegiatan', 'indexKegiatan')->name('kegiatan');
-    Route::get('/{id}/kegiatan/addkegiatan', 'addKegiatan')->name('addkegiatan');
     Route::post("users", "getUser")->name('getUser');
 })->middleware(['auth']);
 
@@ -25,6 +24,12 @@ Route::controller(\App\Http\Controllers\NavbarController::class)->group(function
 Route::controller(\App\Http\Controllers\ProgramController::class)->group(function () {
     Route::get('/{kpis}/program/addprogram', 'create')->name('addprogram');
     Route::post('/{kpis}/program/addprogram', "store")->name('storeprogram');
+
+})->middleware(['auth']);
+
+Route::controller(\App\Http\Controllers\KegiatanController::class)->group(function () {
+    Route::get('/{id}/kegiatan/addkegiatan', 'create')->name('addkegiatan');
+    Route::post('/{id}/kegiatan/addkegiatan', 'store')->name('storekegiatan');
 
 })->middleware(['auth']);
 

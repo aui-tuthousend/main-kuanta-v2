@@ -1,54 +1,49 @@
 @include('navbar')
 <title>Add Kegiatan</title>
 <div class="container py-3">
-    {{--    <form action="{{ route('addtask') }}" method="POST">--}}
-    {{--        @csrf--}}
-
-    <label for="opt">Pilih User</label>
-    <select class="form-select" id="opt" aria-label="Default select example">
+    <form action="{{ route('storekegiatan', $program->id) }}" method="POST">
+        @csrf
+    <label for="user">Pilih User</label>
+    <select class="form-select" name="user" id="user" aria-label="Default select example">
         <option selected>Pilih User</option>
-        <option value="1">Orang 1</option>
-        <option value="2">orang 2</option>
-        <option value="3">orang 3</option>
-        <option value="3">Orang utan</option>
+        @foreach($users as $user)
+            <option value={{$user->id}}>{{$user->name}}</option>
+        @endforeach
     </select>
 
-    <label for="Form1">Judul Program</label>
+    <label for="jp">Judul Program</label>
     <div class="form-group">
-        <input type="text" class="form-control" id="Form1" value="ini judul program" readonly>
+        <input type="text" class="form-control" name="jp" id="jp" value={{$program->judul}} readonly>
     </div>
-    <label for="Form2">Judul Kegiatan</label>
+    <label for="jk">Judul Kegiatan</label>
     <div class="form-group">
-        <input type="text" class="form-control" id="Form2" placeholder="Masukkan Judul Kegiatan">
+        <input type="text" class="form-control" name="jk" id="jk" placeholder="Masukkan Judul Kegiatan" required>
     </div>
-    <label for="Form2">Target</label>
+    <label for="target">Target</label>
     <div class="form-group">
-        <input type="text" class="form-control" id="Form2" placeholder="Masukkan Quantity Target">
+        <input type="text" class="form-control" name="target" id="target" placeholder="Masukkan Quantity Target" required>
     </div>
 
-    <label for="opt">Pilih Tipe Target</label>
-    <select class="form-select" id="opt" aria-label="Default select example">
-{{--        <option selected>Pilih Tipe</option>--}}
-        <option value="">Juta</option>
-        <option value="">Milyar</option>
-        <option value="">Orang</option>
-        <option value="">Orang/bulan</option>
-        <option value="">Produk</option>
-        <option value="">Persentase</option>
+    <label for="tt">Pilih Tipe Target</label>
+    <select class="form-select" name="tt" id="tt" aria-label="Default select example">
+        <option value="juta">Juta</option>
+        <option value="milyar">Milyar</option>
+        <option value="orang">Orang</option>
+        <option value="orang/bulan">Orang/bulan</option>
+        <option value="produk">Produk</option>
+        <option value="%">Persentase</option>
     </select>
-    <label for="Form2">Catatan</label>
+    <label for="catatan">Catatan</label>
     <div class="form-group">
-        <input type="text" class="form-control" id="Form2" placeholder="Masukkan Catatan">
+        <input type="text" class="form-control" name="catatan" id="catatan" placeholder="Masukkan Catatan">
     </div>
-    <label for="datepicker">Deadline</label>
+    <label for="deadline">Deadline</label>
     <br/>
-    <input type="datetime-local" name="deadline" id="datepicker" required>
-
-
+    <input type="datetime-local" name="deadline" id="deadline" required>
     <br/>
     <br/>
     <button class="btn btn-primary" type="submit">Submit</button>
-    {{--    </form>--}}
+    </form>
 
 
 

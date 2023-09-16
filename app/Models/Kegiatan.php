@@ -10,22 +10,22 @@ class Kegiatan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_kpi',
-        'id_program',
-        'id_user',
-        'judul_program',
-        'judul',
-        'circle',
-        'target_int',
-        'target',
-        'tipe_target',
-        'capaian',
-        'fixed_capaian',
-        'catatan',
-        'user_name',
-        'deadline',
-        'status',
-        'achieved',
+            'id_kpi',
+            'id_program',
+            'id_user',
+            'judul_program',
+            'judul',
+            'circle',
+            'target_int',
+            'target',
+            'tipe_target',
+            'capaian',
+            'fixed_capaian',
+            'catatan',
+            'user_name',
+            'deadline',
+            'status',
+            'achieved',
 
     ];
 

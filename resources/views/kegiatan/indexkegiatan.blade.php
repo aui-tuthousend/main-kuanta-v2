@@ -3,7 +3,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <h2 class="mb-0">List Kegiatan dari Program {{$kegiatans->judul}}</h2>
-        <a href='{{route('addkegiatan', "program")}}' class="btn btn-dark">Add Kegiatan + </a>
+        <a href='{{route('addkegiatan', $kegiatans->id)}}' class="btn btn-dark">Add Kegiatan + </a>
     </div>
 
     <table class="table table-hover mt-3">

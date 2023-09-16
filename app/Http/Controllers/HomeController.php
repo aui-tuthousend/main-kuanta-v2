@@ -52,11 +52,6 @@ class HomeController extends Controller
 
         return view('kegiatan.indexkegiatan', compact('loop', 'kegiatans'));
     }
-
-    public function addKegiatan($program){
-
-        return view('kegiatan.crud.addk');
-    }
 }
 
 
