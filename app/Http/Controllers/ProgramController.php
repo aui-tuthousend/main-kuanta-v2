@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\KPI;
 use App\Models\Program;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProgramController extends Controller
 {
     public function create($id){
         $kpi = KPI::find($id);
+        $users = User::orderBy('circle', 'ASC')->get();
 
-        return view('program.crud.add', compact('kpi'));
+
+        return view('program.crud.add', compact('kpi', 'users'));
     }
 
     public function store(Request $request, $id){

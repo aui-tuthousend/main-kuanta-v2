@@ -13,6 +13,7 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('/{id}/program', 'indexProgram')->name('program');
 
     Route::get('/{id}/kegiatan', 'indexKegiatan')->name('kegiatan');
+
     Route::post("users", "getUser")->name('getUser');
 })->middleware(['auth']);
 

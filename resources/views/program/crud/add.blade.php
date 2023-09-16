@@ -18,8 +18,11 @@
     </div>
 
         <h6 class="pt-2">PJ:</h6>
-        <select class="form-control" id="pj" name="pj">
-
+        <select class="form-select" name="pj" id="pj" aria-label="Default select example">
+            <option selected>Pilih User</option>
+            @foreach($users as $user)
+                <option value={{$user->name}}>{{$user->name}}</option>
+            @endforeach
         </select>
 {{--    </div>--}}
 

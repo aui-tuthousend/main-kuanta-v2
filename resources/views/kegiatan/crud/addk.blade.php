@@ -3,8 +3,8 @@
 <div class="container py-3">
     <form action="{{ route('storekegiatan', $program->id) }}" method="POST">
         @csrf
-    <label for="user">Pilih User</label>
-    <select class="form-select" name="user" id="user" aria-label="Default select example">
+    <label for="selectedUser">Pilih User</label>
+    <select class="form-select" name="selectedUser" id="selectedUser" aria-label="Default select example">
         <option selected>Pilih User</option>
         @foreach($users as $user)
             <option value={{$user->id}}>{{$user->name}}</option>

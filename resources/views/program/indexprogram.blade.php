@@ -25,7 +25,7 @@
             <td class="align-middle">{{$pro->circle}}</td>
             <td class="align-middle">{{$pro->pj}}</td>
             <td class="align-middle">{{$pro->status}}</td>
-            <td class="align-middle">{{}}</td>
+            <td class="align-middle">{{$keg->kegiatan->count()}}</td>
         </tr>
         @endforeach
         </tbody>

@@ -11,29 +11,31 @@ class KegiatanController extends Controller
 {
     public function create($id){
         $users = User::orderBy('circle', 'ASC')->get();
-        $program = find($id);
+        $program = Program::find($id);
 
         return view('kegiatan.crud.addk', compact('users', 'program'));
     }
 
     public function store(Request $request, $id){
 
-        $aidi = $request->input('user');
-        $user = User::find($aidi);
+        $aidi = $request->input('selectedUser');
+        $selected = User::find($aidi);
 
         $prog = Program::find($id);
         $kegiatan = Kegiatan::create([
             'id_kpi' => $prog->id_kpi,
             'id_program' => $id,
-            'id_user' => $request->input('user'),
+            'id_user' => $selected->id,
             'judul_program' => $request->input('jp'),
             'judul' => $request->input('jk'),
             'circle' => $prog->circle,
             'target_int' => $request->input('target'),
             'tipe_target' => $request->input('tt'),
             'catatan' => $request->input('catatan'),
-            'user_name' => $user->name,
+            'user_name' => $selected->name,
             'deadline' => $request->input('deadline'),
         ]);
+
+        return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
     }
 }
