@@ -25,7 +25,7 @@
 
     <br/>
         <div>Submit Program</div>
-    <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 
 </div>
