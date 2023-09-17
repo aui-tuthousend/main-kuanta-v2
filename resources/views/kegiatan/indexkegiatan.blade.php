@@ -19,7 +19,8 @@
         <tr >
             <td class="align-middle">{{$keg->judul}}</td>
             <td class="align-middle">{{$keg->circle}}</td>
-            <td class="align-middle">{{$keg->target}}</td>
+{{--            <td class="align-middle">{{$keg->target}}</td>--}}
+            <td class="align-middle">{{$keg->target_int}} {{$keg->tipe_target}}</td>
             <td class="align-middle">{{$keg->capaian}}</td>
             <td class="align-middle">{{$keg->catatan}}</td>
             <td class="align-middle">{{$keg->user_name}}</td>

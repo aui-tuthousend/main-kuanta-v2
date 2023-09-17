@@ -10,6 +10,7 @@ Route::controller(\App\Http\Controllers\SesiController::class)->group(function (
 
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function (){
     Route::get('/home', 'index')->name('home');
+
     Route::get('/{id}/program', 'indexProgram')->name('program');
 
     Route::get('/{id}/kegiatan', 'indexKegiatan')->name('kegiatan');
@@ -31,6 +32,8 @@ Route::controller(\App\Http\Controllers\ProgramController::class)->group(functio
 Route::controller(\App\Http\Controllers\KegiatanController::class)->group(function () {
     Route::get('/{id}/kegiatan/addkegiatan', 'create')->name('addkegiatan');
     Route::post('/{id}/kegiatan/addkegiatan', 'store')->name('storekegiatan');
+//    Route::get('/home/update/{id}', 'updateCapaian')->name('updateCapaian');
+
 
 })->middleware(['auth']);
 

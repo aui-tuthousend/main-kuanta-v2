@@ -38,4 +38,10 @@ class KegiatanController extends Controller
 
         return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
     }
+
+    public function updateCapaian($id){
+        $keg = Kegiatan::find($id);
+
+        return view('homepage.modalupdatecapaian.updateCapaian', compact('keg'));
+    }
 }
