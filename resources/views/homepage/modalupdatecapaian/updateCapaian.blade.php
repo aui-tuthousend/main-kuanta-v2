@@ -12,8 +12,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <label for="Form1">Target Kegiatan</label>
+                <form action="{{route('updateCp', 1)}}" method="POST">
+                    @csrf
+                    <div class="d-flex align-items-center justify-content-between">
+                        <label for="Form1">Target Kegiatan</label>
+                        <input type="text" class="form-control" name="kegiatan-id" id="kegiatan-id" readonly>
+                    </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="kegiatan-target" readonly>
                     </div>
@@ -22,7 +26,7 @@
                             <div class="form-group">
                                 <label for="inputGroup1">Quantity</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="kegiatan-capaian" placeholder="Masukkan Capaian">
+                                    <input type="text" class="form-control" name="kegiatan-capaian" id="kegiatan-capaian" placeholder="Masukkan Capaian">
                                 </div>
                             </div>
                         </div>
@@ -35,12 +39,13 @@
                             </div>
                         </div>
                     </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+{{--                        <button type="button" class="btn btn-primary">Save changes</button>--}}
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
     </div>
 </div>

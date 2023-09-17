@@ -19,7 +19,34 @@
         @yield('content')
     </div>
 
-    @yield('script')
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('body').on('click', '#show-user', function () {
+                var userURL = $(this).data('url');
+                $.get(userURL, function (data) {
+                    console.log(data);
+                    $('#update').modal('show');
+                    $('#kegiatan-id').val(data.id);
+                    $('#kegiatan-target').val(data.target);
+                    $('#kegiatan-capaian').val(data.capaian);
+                    $('#kegiatan-tipetarget').val(data.tipe_target);
+
+                    // $('#update-form').submit();
+                })
+            });
+
+        });
+    </script>
+    <style>
+        #kegiatan-id {
+            width: 35px; /* Ganti dengan panjang yang Anda inginkan, misalnya 200px */
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+    </style>
 
 </body>
 </html>

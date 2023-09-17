@@ -33,6 +33,7 @@ Route::controller(\App\Http\Controllers\KegiatanController::class)->group(functi
     Route::get('/{id}/kegiatan/addkegiatan', 'create')->name('addkegiatan');
     Route::post('/{id}/kegiatan/addkegiatan', 'store')->name('storekegiatan');
     Route::get('/home/update/{id}', 'show')->name('updateCapaian');
+    Route::post('/home/update/{id}', 'storeCapaian')->name('updateCp');
 
 
 })->middleware(['auth']);

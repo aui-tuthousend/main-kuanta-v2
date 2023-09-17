@@ -32,7 +32,7 @@
                         class="btn btn-info"
                     >Update Capaian
                     </a>
-                    <a href="{{ route('kegiatan', "programnya apa") }}" class="btn btn-info">detail</a>
+                    <a href="{{ route('kegiatan', $keg->id_program) }}" class="btn btn-info">detail</a>
                 </td>
             </tr>
         @endforeach
@@ -44,27 +44,6 @@
         </tbody>
     </table>
 
-
-@endsection
-@section('script')
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-
-            $('body').on('click', '#show-user', function () {
-                var userURL = $(this).data('url');
-                $.get(userURL, function (data) {
-                    console.log(data);
-                    $('#update').modal('show');
-                    $('#kegiatan-target').val(data.target);
-                    $('#kegiatan-capaian').val(data.capaian);
-                    $('#kegiatan-tipetarget').val(data.tipe_target);
-                })
-            });
-
-        });
-
-    </script>
 
 @endsection
 @include('homepage.modalupdatecapaian.updateCapaian')

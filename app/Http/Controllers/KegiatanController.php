@@ -46,11 +46,24 @@ class KegiatanController extends Controller
     public function show($id){
         $keg = Kegiatan::find($id);
         $data = [
+            'id' => $keg->id,
             'target' => $keg->target,
             'capaian' => $keg->capaian,
             'tipe_target' => $keg->tipe_target,
         ];
 
         return response()->json($data);
+    }
+
+    public function storeCapaian(Request $request, $ai){
+        $id = (int)$request->input('kegiatan-id');
+//        $id = intval($request->input('kegiatan-id'));
+        $capai = $request->input('kegiatan-capaian');
+        $kegiatan = Kegiatan::find($id);
+
+        $kegiatan->update([
+            'capaian'=>$capai,
+        ]);
+        return redirect('/home');
     }
 }
