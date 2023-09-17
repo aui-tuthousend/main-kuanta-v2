@@ -32,7 +32,7 @@ Route::controller(\App\Http\Controllers\ProgramController::class)->group(functio
 Route::controller(\App\Http\Controllers\KegiatanController::class)->group(function () {
     Route::get('/{id}/kegiatan/addkegiatan', 'create')->name('addkegiatan');
     Route::post('/{id}/kegiatan/addkegiatan', 'store')->name('storekegiatan');
-//    Route::get('/home/update/{id}', 'updateCapaian')->name('updateCapaian');
+    Route::get('/home/update/{id}', 'show')->name('updateCapaian');
 
 
 })->middleware(['auth']);

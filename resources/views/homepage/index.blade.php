@@ -24,7 +24,14 @@
                 <td class="align-middle">{{$keg->catatan}}</td>
                 <td class="align-middle">{{$keg->capaian}}</td>
                 <td class="align-middle">
-                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#update" >update capaian</a>
+{{--                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#update" >update capaian</a>--}}
+                    <a
+                        href="javascript:void(0)"
+                        id="show-user"
+                        data-url="{{ route('updateCapaian', $keg->id) }}"
+                        class="btn btn-info"
+                    >Update Capaian
+                    </a>
                     <a href="{{ route('kegiatan', "programnya apa") }}" class="btn btn-info">detail</a>
                 </td>
             </tr>
@@ -37,5 +44,27 @@
         </tbody>
     </table>
 
-    @include('homepage.modalupdatecapaian.updateCapaian')
+
 @endsection
+@section('script')
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('body').on('click', '#show-user', function () {
+                var userURL = $(this).data('url');
+                $.get(userURL, function (data) {
+                    console.log(data);
+                    $('#update').modal('show');
+                    $('#kegiatan-target').val(data.target);
+                    $('#kegiatan-capaian').val(data.capaian);
+                    $('#kegiatan-tipetarget').val(data.tipe_target);
+                })
+            });
+
+        });
+
+    </script>
+
+@endsection
+@include('homepage.modalupdatecapaian.updateCapaian')

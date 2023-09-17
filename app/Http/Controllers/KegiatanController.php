@@ -20,6 +20,9 @@ class KegiatanController extends Controller
 
         $aidi = $request->input('selectedUser');
         $selected = User::find($aidi);
+        $tar = $request->input('target');
+        $get = $request->input('tt');
+        $target = $tar . $get;
 
         $prog = Program::find($id);
         $kegiatan = Kegiatan::create([
@@ -31,6 +34,7 @@ class KegiatanController extends Controller
             'circle' => $prog->circle,
             'target_int' => $request->input('target'),
             'tipe_target' => $request->input('tt'),
+            'target' => $target,
             'catatan' => $request->input('catatan'),
             'user_name' => $selected->name,
             'deadline' => $request->input('deadline'),
@@ -39,9 +43,14 @@ class KegiatanController extends Controller
         return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
     }
 
-    public function updateCapaian($id){
+    public function show($id){
         $keg = Kegiatan::find($id);
+        $data = [
+            'target' => $keg->target,
+            'capaian' => $keg->capaian,
+            'tipe_target' => $keg->tipe_target,
+        ];
 
-        return view('homepage.modalupdatecapaian.updateCapaian', compact('keg'));
+        return response()->json($data);
     }
 }

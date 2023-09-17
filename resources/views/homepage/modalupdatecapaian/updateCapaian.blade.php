@@ -15,14 +15,14 @@
                 <form>
                     <label for="Form1">Target Kegiatan</label>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="Form1" value="{{$keg->target}}" readonly>
+                        <input type="text" class="form-control" id="kegiatan-target" readonly>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="inputGroup1">Quantity</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="inputGroup1" value="{{$keg->capaian}}" placeholder="Masukkan Capaian">
+                                    <input type="text" class="form-control" id="kegiatan-capaian" placeholder="Masukkan Capaian">
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label for="inputGroup2" class="sr-only">Tipe capaian</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" value="{{$keg->tipe_target}}" id="inputGroup2" readonly>
+                                    <input type="text" class="form-control" id="kegiatan-tipetarget" readonly>
                                 </div>
                             </div>
                         </div>

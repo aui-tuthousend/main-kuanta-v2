@@ -33,9 +33,9 @@ class HomeController extends Controller
 //    <--------------------- Program --------------------->
     public function indexProgram($id){
         $programs = KPI::with('program')->findOrFail($id);
-        $keg = Program::with('kegiatan')->findOrFail($id);
+//        $keg = Program::with('kegiatan')->findOrFail($id);
 
-        return view('program.indexprogram', compact('programs', 'id','keg'));
+        return view('program.indexprogram', compact('programs', 'id'));
     }
 
 //    <--------------------- Kegiatan --------------------->
