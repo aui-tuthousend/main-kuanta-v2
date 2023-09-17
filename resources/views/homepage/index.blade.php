@@ -22,7 +22,7 @@
                 <td class="align-middle">{{$keg->judul}}</td>
                 <td class="align-middle">{{$keg->target_int}} {{$keg->tipe_target}}</td>
                 <td class="align-middle">{{$keg->catatan}}</td>
-                <td class="align-middle">{{$keg->capaian}}</td>
+                <td class="align-middle">{{$keg->fixed_capaian}}</td>
                 <td class="align-middle">
 {{--                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#update" >update capaian</a>--}}
                     <a

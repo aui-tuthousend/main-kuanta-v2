@@ -57,12 +57,19 @@ class KegiatanController extends Controller
 
     public function storeCapaian(Request $request, $ai){
         $id = (int)$request->input('kegiatan-id');
-//        $id = intval($request->input('kegiatan-id'));
-        $capai = $request->input('kegiatan-capaian');
         $kegiatan = Kegiatan::find($id);
+        $capai = $request->input('kegiatan-capaian');
+        $an = $kegiatan->tipe_target;
+        $ach = ($capai / $kegiatan->target_int) * 100;
+
+        $caapaian = $capai ." ".$an;
 
         $kegiatan->update([
-            'capaian'=>$capai,
+            'capaian' => $capai,
+            'fixed_capaian' => $caapaian,
+            'status' => "on going",
+            'achieved' => $ach,
+
         ]);
         return redirect('/home');
     }
