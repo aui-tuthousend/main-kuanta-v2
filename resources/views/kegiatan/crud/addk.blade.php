@@ -4,7 +4,7 @@
     <form action="{{ route('storekegiatan', $program->id) }}" method="POST">
         @csrf
     <label for="selectedUser">Pilih User</label>
-    <select class="form-select" name="selectedUser" id="selectedUser" aria-label="Default select example">
+    <select class="form-select" name="selectedUser" id="selectedUser" aria-label="Default select example" required>
         <option selected>Pilih User</option>
         @foreach($users as $user)
             <option value={{$user->id}}>{{$user->name}}</option>
