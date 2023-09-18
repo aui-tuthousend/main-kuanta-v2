@@ -21,6 +21,34 @@
 @include('navbar')
 <div class="container-fluid py-2 p-5">
     @yield('indexprogram')
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('body').on('click', '#edit-program', function () {
+                var userURL = $(this).data('url');
+                $.get(userURL, function (data) {
+                    console.log(data);
+                    $('#editProgram').modal('show');
+                    $('#program-id').val(data.id);
+                    $('#program-judul').val(data.judul);
+                    $('#program-circle').val(data.circle);
+                    $('#program-pj').val(data.pj);
+
+                    // $('#update-form').submit();
+                })
+            });
+
+        });
+    </script>
+    <style>
+        #program-id {
+            width: 35px; /* Ganti dengan panjang yang Anda inginkan, misalnya 200px */
+            background-color: transparent;
+            border: none;
+            color: white;
+        }
+    </style>
 </div>
 </body>
 </html>

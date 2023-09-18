@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kegiatan;
 use App\Models\KPI;
 use App\Models\Program;
 use App\Models\User;
@@ -27,5 +28,37 @@ class ProgramController extends Controller
         ]);
 
         return redirect()->route('program', $id)->with('ProgramAdded', 'Program Berhasil Ditambah');
+    }
+
+    public function editProgram($id){
+        $pro = Program::find($id);
+        $data = [
+            'id' => $pro->id,
+            'judul' => $pro->judul,
+            'circle' => $pro->circle,
+            'pj' => $pro->pj,
+        ];
+
+        return response()->json($data);
+    }
+
+    public function storeEdit(Request $request, $idi){
+        $id = (int)$request->input('program-id');
+        $peje = $request->input('program-pj-new');
+        $pro = Program::find($id);
+        $pj = null;
+
+        if ($peje == "nope"){
+            $pj = $request->input('program-pj');
+        } else {
+            $pj = $peje;
+        }
+
+        $pro->update([
+            'judul' => $request->input('program-judul'),
+            'pj' => $pj,
+        ]);
+
+        return redirect()->back();
     }
 }

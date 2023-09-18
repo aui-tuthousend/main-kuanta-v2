@@ -27,11 +27,16 @@ Route::controller(\App\Http\Controllers\ProgramController::class)->group(functio
     Route::get('/{kpis}/program/addprogram', 'create')->name('addprogram');
     Route::post('/{kpis}/program/addprogram', "store")->name('storeprogram');
 
+    Route::get('/{id}/program/edit', 'editProgram')->name('editprogram');
+    Route::post('/{id}/program/edit', 'storeEdit')->name('storeEdit');
+
+
 })->middleware(['auth']);
 
 Route::controller(\App\Http\Controllers\KegiatanController::class)->group(function () {
     Route::get('/{id}/kegiatan/addkegiatan', 'create')->name('addkegiatan');
     Route::post('/{id}/kegiatan/addkegiatan', 'store')->name('storekegiatan');
+
     Route::get('/home/update/{id}', 'show')->name('updateCapaian');
     Route::post('/home/update/{id}', 'storeCapaian')->name('updateCp');
 

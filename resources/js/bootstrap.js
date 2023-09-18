@@ -1,5 +1,7 @@
 import 'bootstrap';
-
+import 'select2';
+import 'select2/dist/css/select2.min.css';
+import 'jquery';
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

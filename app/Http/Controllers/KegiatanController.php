@@ -61,15 +61,19 @@ class KegiatanController extends Controller
         $capai = $request->input('kegiatan-capaian');
         $an = $kegiatan->tipe_target;
         $ach = ($capai / $kegiatan->target_int) * 100;
-
         $caapaian = $capai ." ".$an;
+
+        $pro = Program::find($kegiatan->id_program);
 
         $kegiatan->update([
             'capaian' => $capai,
             'fixed_capaian' => $caapaian,
             'status' => "on going",
             'achieved' => $ach,
+        ]);
 
+        $pro->update([
+            'status' => "on going",
         ]);
         return redirect('/home');
     }
