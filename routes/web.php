@@ -30,6 +30,8 @@ Route::controller(\App\Http\Controllers\ProgramController::class)->group(functio
     Route::get('/{id}/program/edit', 'editProgram')->name('editprogram');
     Route::post('/{id}/program/edit', 'storeEdit')->name('storeEdit');
 
+    Route::post('/{id}/program/delete', 'storeEdit')->name('storeEdit');
+
 
 })->middleware(['auth']);
 
