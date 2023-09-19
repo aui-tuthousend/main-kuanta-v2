@@ -33,7 +33,8 @@ class HomeController extends Controller
 //    <--------------------- Program --------------------->
     public function indexProgram($id){
         $programs = KPI::with('program')->findOrFail($id);
-        $users = User::orderBy('circle', 'ASC')->get();
+        $users = User::where('circle', $programs->circle)->get();
+//        $users = User::orderBy('circle', 'ASC')->get();
 
 
         return view('program.indexprogram', compact('programs', 'id', 'users'));
