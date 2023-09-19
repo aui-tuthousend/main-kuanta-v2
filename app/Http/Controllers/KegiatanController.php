@@ -42,14 +42,40 @@ class KegiatanController extends Controller
             'deadline' => $request->input('deadline'),
         ]);
 
-        if ($selected->circle != $kp->circle){
-            $a = $selected->circle;
-            $b = $prog->circle;
-            $c = $b . ", " . $a;
+        if ($selected->circle != $prog->circle1){
+            if ($prog->circle2 == null){
+                $a = $selected->circle;
+                $b = $prog->circle;
+                $c = $b . ", " . $a;
+                $prog->update([
+                    'circle2' => $selected->circle,
+                    'circle' => $c,
+                ]);
+            } else {
+                if ($selected->circle == $prog->circle2) {
 
-            $prog->update([
-                'circle' => $c,
-            ]);
+                    return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
+                } else {
+                    if($prog->circle3 == null){
+                        $a = $selected->circle;
+                        $b = $prog->circle;
+                        $c = $b . ", " . $a;
+                        $prog->update([
+                            'circle3' => $selected->circle,
+                            'circle' => $c,
+                        ]);
+                    } else {
+                        if ($selected->circle == $prog->circle3) {
+
+                            return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
+                        } else {
+
+                            return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
+                        }
+                    }
+                }
+            }
+//
         }
 
         return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');

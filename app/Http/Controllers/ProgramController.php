@@ -23,6 +23,7 @@ class ProgramController extends Controller
             'id_kpi' => $id,
             'judul_kpi' => $request->input('judulKpi'),
             'circle' => $request->input('circle'),
+            'circle1' => $request->input('circle'),
             'judul' => $request->input('judul'),
             'pj' => $request->input('pj')
         ]);
