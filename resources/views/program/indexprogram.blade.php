@@ -38,7 +38,7 @@
                     </a>
                     <a href="{{ route('kegiatan', $pro->id) }}" class="btn btn-warning">detail</a>
                     @if($pro->kegiatan->count() == 0)
-                        <a href="{{ route('deleteprogram', $pro->id) }}" class="btn btn-danger">delete</a>
+                        <a href="{{ route('deleteprogram', $pro->id, $pro->kegiatan->count()) }}" class="btn btn-danger">delete</a>
                     @endif
                 </td>
             </tr>

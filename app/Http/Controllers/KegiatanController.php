@@ -87,6 +87,6 @@ class KegiatanController extends Controller
         $pro->update([
             'status' => "on going",
         ]);
-        return redirect('/home');
+        return redirect('/home')->with('capaianUpdated', 'Capaian berhasil diupdate!');
     }
 }

@@ -63,6 +63,15 @@ class ProgramController extends Controller
     }
 
     public function delete($id, $key){
+        $prog = Program::find($id);
+        $idk = $prog->id_kpi;
 
+        if($key != 0){
+
+            return redirect(route('program', $idk))->with('ProgramUndeleted', 'Program Tidak Bisa Dihapus!');
+        }
+
+        $prog->delete();
+        return redirect(route('program', $idk))->with('ProgramDeleted', 'Program Berhasil Dihapus!');
     }
 }
