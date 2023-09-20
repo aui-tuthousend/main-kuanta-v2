@@ -12,7 +12,7 @@
                     @csrf
                     <div class="d-flex align-items-center justify-content-between">
                         <label for="Form1">Judul Kegiatan</label>
-                        <input type="text" class="form-control" name="kegiatan-id" id="kegiatan-id" readonly>
+                        <input type="text" class="form-control" name="kegiatan-id" id="kegiatan-aidi" readonly>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="kegiatan-judul" id="kegiatan-judul">
@@ -25,9 +25,6 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="inputGroup1">Tipe target</label>
-{{--                                <div class="form-group">--}}
-{{--                                    <input type="text" class="form-control" name="target-new" id="target-new">--}}
-{{--                                </div>--}}
                                 <select class="form-select" name="kegiatan-user-new" aria-label="Default select example">
                                     <option value="nope">Pilih Tipe Target</option>
                                     <option value="juta">Juta</option>

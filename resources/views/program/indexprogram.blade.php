@@ -38,7 +38,11 @@
                     </a>
                     <a href="{{ route('kegiatan', $pro->id) }}" class="btn btn-warning">detail</a>
                     @if($pro->kegiatan->count() == 0)
-                        <a href="{{ route('deleteprogram', $pro->id, $pro->kegiatan->count()) }}" class="btn btn-danger">delete</a>
+                        <form action="{{ route('deleteprogram', $pro->id, $pro->kegiatan->count()) }}">
+                            @csrf
+                            @method('DELETE')
+                        <a href="{{ route('deleteprogram', $pro->id, $pro->kegiatan->count()) }}" class="btn btn-danger" onclick="return confirm('Delete Program?')">delete</a>
+                        </form>
                     @endif
                 </td>
             </tr>

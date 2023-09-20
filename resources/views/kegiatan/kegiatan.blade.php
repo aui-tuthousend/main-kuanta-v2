@@ -26,7 +26,7 @@
             $.get(userURL, function (data) {
                 console.log(data);
                 $('#editKegiatan').modal('show');
-                $('#kegiatan-id').val(data.id);
+                $('#kegiatan-aidi').val(data.id);
                 $('#kegiatan-judul').val(data.judul);
                 $('#kegiatan-target-int').val(data.target_int);
                 $('#kegiatan-tipe-target').val(data.tipe_target);
