@@ -24,7 +24,7 @@
             <tr>
                 <td class="align-middle">{{$loop->iteration}}</td>
                 <td class="align-middle">{{$pro->judul}}</td>
-                <td class="align-middle">{{$pro->circle}}</td>
+                <td class="align-middle">{{$pro->circle1}} {{$pro->circle2}} {{$pro->circle3}}</td>
                 <td class="align-middle">{{$pro->pj}}</td>
                 <td class="align-middle">{{$pro->status}}</td>
                 <td class="align-middle">{{$pro->kegiatan->count()}}</td>

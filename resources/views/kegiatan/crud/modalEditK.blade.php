@@ -12,7 +12,7 @@
                     @csrf
                     <div class="d-flex align-items-center justify-content-between">
                         <label for="Form1">Judul Kegiatan</label>
-                        <input type="text" class="form-control" name="kegiatan-id" id="kegiatan-aidi" readonly>
+                        <input type="text" class="form-control" name="kegiatan-aidi" id="kegiatan-aidi" readonly>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="kegiatan-judul" id="kegiatan-judul">
@@ -25,7 +25,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="inputGroup1">Tipe target</label>
-                                <select class="form-select" name="kegiatan-user-new" aria-label="Default select example">
+                                <select class="form-select" name="kegiatan-target-new" aria-label="Default select example">
                                     <option value="nope">Pilih Tipe Target</option>
                                     <option value="juta">Juta</option>
                                     <option value="milyar">Milyar</option>
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label for="inputGroup2" class="sr-only">Tipe target lama</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="kegiatan-target" id="kegiatan-tipe-target" readonly>
+                                    <input type="text" class="form-control" name="kegiatan-target-old" id="kegiatan-tipe-target" readonly>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                 <select class="form-select" name="kegiatan-user-new" aria-label="Default select example">
                                     <option value="nope">Pilih User</option>
                                     @foreach($users as $user)
-                                        <option value={{$user->name}}>{{$user->name}}</option>
+                                        <option value={{$user->id}}>{{$user->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="form-group">
                                     <label for="inputGroup2" class="sr-only">Pelaku Lama</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="kegiatan-user-lama" id="kegiatan-user-name" readonly>
+                                    <input type="text" class="form-control" name="kegiatan-user-old" id="kegiatan-user-name" readonly>
                                 </div>
                             </div>
                         </div>

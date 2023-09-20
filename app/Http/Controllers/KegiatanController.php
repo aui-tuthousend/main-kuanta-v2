@@ -44,12 +44,8 @@ class KegiatanController extends Controller
 
         if ($selected->circle != $prog->circle1){
             if ($prog->circle2 == null){
-                $a = $selected->circle;
-                $b = $prog->circle;
-                $c = $b . ", " . $a;
                 $prog->update([
                     'circle2' => $selected->circle,
-                    'circle' => $c,
                 ]);
             } else {
                 if ($selected->circle == $prog->circle2) {
@@ -57,12 +53,8 @@ class KegiatanController extends Controller
                     return redirect(route('kegiatan', $id))->with('KegiatanAdded', 'Kegiatan Berhasil Ditambah');
                 } else {
                     if($prog->circle3 == null){
-                        $a = $selected->circle;
-                        $b = $prog->circle;
-                        $c = $b . ", " . $a;
                         $prog->update([
                             'circle3' => $selected->circle,
-                            'circle' => $c,
                         ]);
                     } else {
                         if ($selected->circle == $prog->circle3) {
@@ -132,7 +124,20 @@ class KegiatanController extends Controller
         return response()->json($data);
     }
 
-    public function storeEditK(Request $request, $id){
+    public function storeEditK(Request $request, $idi){
+        $id = (int)$request->input('kegiatan-aidi');
+        $judul = $request->input('kegiatan-judul');
+        $target = $request->input('kegiatan-target');
+        $tipe_target = $request->input('kegiatan-target-new');
+        $tipe_target_old = $request->input('kegiatan-target-old');
+        $catatan = $request->input('kegiatan-catatan');
+        $deadline = $request->input('kegiatan-deadline');
+        $id_user_new = $request->input('kegiatan-user-new');
+        $user_old = $request->input('kegiatan-user-old');
+        $id_user_old = $request->input('kegiatan-user-id');
+
+
+
 
     }
 }
