@@ -126,18 +126,40 @@ class KegiatanController extends Controller
 
     public function storeEditK(Request $request, $idi){
         $id = (int)$request->input('kegiatan-aidi');
-        $judul = $request->input('kegiatan-judul');
-        $target = $request->input('kegiatan-target');
         $tipe_target = $request->input('kegiatan-target-new');
         $tipe_target_old = $request->input('kegiatan-target-old');
-        $catatan = $request->input('kegiatan-catatan');
-        $deadline = $request->input('kegiatan-deadline');
         $id_user_new = $request->input('kegiatan-user-new');
-        $user_old = $request->input('kegiatan-user-old');
+//        $user_old = $request->input('kegiatan-user-old');
         $id_user_old = $request->input('kegiatan-user-id');
+        $idu = null; $tp = null;
+
+        if($id_user_new == "nope"){
+            $idu = $id_user_old;
+        } else {
+            $idu = $id_user_new;
+        }
+
+        if($tipe_target == "nope"){
+            $tp = $tipe_target_old;
+        } else {
+            $tp = $tipe_target;
+        }
 
 
+        $kegiatan = Kegiatan::find($id);
+        $selected = User::find($idu);
+//        $prog = Program::find($kegiatan->id_program);
+        $kegiatan->update([
+            'judul' => $request->input('kegiatan-judul'),
+            'target_int' => $request->input('kegiatan-target'),
+            'tipe_target' => $tp,
+            'catatan' => $request->input('kegiatan-catatan'),
+            'deadline' => $request->input('kegiatan-deadline'),
+            'user_name' => $selected->name,
+            'id_user' => $idu
 
+        ]);
 
+        return redirect(route('kegiatan', $kegiatan->id_program));
     }
 }
