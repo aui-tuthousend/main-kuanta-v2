@@ -28,7 +28,7 @@
             <td class="align-middle">{{$keg->status}}</td>
             <td class="align-middle" style="text-align: center;">{{$keg->achieved}} %</td>
             <td class="align-middle">
-{{--                <a href="#" class="btn btn-warning">edit</a>--}}
+                <div class="d-flex align-items-center justify-content-evenly">
                 <a
                     href="javascript:void(0)"
                     id="edit-kegiatan"
@@ -36,7 +36,12 @@
                     class="btn btn-info"
                 >Edit
                 </a>
-                <a href="#" class="btn btn-danger">delete</a>
+                <form action="{{route('deleteKegiatan', $keg->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" id="del-button-k" class="btn btn-danger" onclick="return confirm('Delete Kegiatan?')">Delete</button>
+                </form>
+                </div>
             </td>
         </tr>
         @endforeach

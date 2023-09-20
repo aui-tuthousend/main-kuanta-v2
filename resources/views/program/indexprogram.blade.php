@@ -29,6 +29,7 @@
                 <td class="align-middle">{{$pro->status}}</td>
                 <td class="align-middle">{{$pro->kegiatan->count()}}</td>
                 <td class="align-middle">
+                    <div class="d-flex align-items-center">
                     <a
                         href="javascript:void(0)"
                         id="edit-program"
@@ -37,12 +38,13 @@
                     >Edit</a>
                     <a href="{{ route('kegiatan', $pro->id) }}" class="btn btn-warning">detail</a>
                     @if($pro->kegiatan->count() == 0)
-{{--                    <form action="{{ route('deleteprogram', ['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}">--}}
-{{--                        @csrf--}}
-{{--                        @method('DELETE')--}}
-                    <a href="{{ route('deleteprogram',['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}" class="btn btn-danger" onclick="return confirm('Delete Program?')">delete</a>
-{{--                    </form>--}}
+                        <form action="{{ route('deleteprogram', ['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" id="del-button-p" class="btn btn-danger">Delete</button>
+                        </form>
                     @endif
+                    </div>
                 </td>
             </tr>
         @endforeach

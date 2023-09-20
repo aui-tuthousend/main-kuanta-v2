@@ -47,6 +47,10 @@
         border: none;
         color: white;
     }
+
+    #del-button-k {
+        margin-top: 17px;
+    }
 </style>
 </body>
 </html>

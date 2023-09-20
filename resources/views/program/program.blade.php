@@ -46,6 +46,9 @@
             border: none;
             color: white;
         }
+        #del-button-p {
+            margin-top: 17px;
+        }
     </style>
 </div>
 </body>

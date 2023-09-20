@@ -162,4 +162,13 @@ class KegiatanController extends Controller
 
         return redirect(route('kegiatan', $kegiatan->id_program));
     }
+
+    public function delete($id){
+        $kegiatan = Kegiatan::find($id);
+        $idk = $kegiatan->id_program;
+
+
+        $kegiatan->delete();
+        return redirect(route('kegiatan', $idk))->with('KegiatanDeleted', 'Kegiatan Berhasil Dihapus!');
+    }
 }

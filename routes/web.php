@@ -45,6 +45,9 @@ Route::controller(\App\Http\Controllers\KegiatanController::class)->group(functi
     Route::get('/{id}/kegiatan/edit', 'editKegiatan')->name('editKegiatan');
     Route::post('/{id}/kegiatan/edit', 'storeEditK')->name('storeEditK');
 
+    Route::delete('/{id}/kegiatan/delete', 'delete')->name('deleteKegiatan');
+
+
 
 
 })->middleware(['auth']);
