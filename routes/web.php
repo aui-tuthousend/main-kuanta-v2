@@ -42,6 +42,10 @@ Route::controller(\App\Http\Controllers\KegiatanController::class)->group(functi
     Route::get('/home/update/{id}', 'show')->name('updateCapaian');
     Route::post('/home/update/{id}', 'storeCapaian')->name('updateCp');
 
+    Route::get('/{id}/kegiatan/edit', 'editKegiatan')->name('editKegiatan');
+    Route::post('/{id}/kegiatan/edit', 'storeEditK')->name('storeEditK');
+
+
 
 })->middleware(['auth']);
 

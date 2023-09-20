@@ -115,4 +115,24 @@ class KegiatanController extends Controller
         ]);
         return redirect('/home')->with('capaianUpdated', 'Capaian berhasil diupdate!');
     }
+
+    public function editKegiatan($id){
+        $keg = Kegiatan::find($id);
+        $data = [
+            'id' => $keg->id,
+            'judul' => $keg->judul,
+            'target_int' => $keg->target_int,
+            'tipe_target' => $keg->tipe_target,
+            'catatan' => $keg->catatan,
+            'deadline' => $keg->deadline,
+            'user_name' => $keg->user_name,
+            'id_user' => $keg->id_user,
+        ];
+
+        return response()->json($data);
+    }
+
+    public function storeEditK(Request $request, $id){
+
+    }
 }

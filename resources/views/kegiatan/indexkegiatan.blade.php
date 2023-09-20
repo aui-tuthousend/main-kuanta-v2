@@ -27,7 +27,14 @@
             <td class="align-middle">{{$keg->status}}</td>
             <td class="align-middle" style="text-align: center;">{{$keg->achieved}} %</td>
             <td class="align-middle">
-                <a href="#" class="btn btn-warning">edit</a>
+{{--                <a href="#" class="btn btn-warning">edit</a>--}}
+                <a
+                    href="javascript:void(0)"
+                    id="edit-kegiatan"
+                    data-url="{{ route('editKegiatan', $keg->id) }}"
+                    class="btn btn-info"
+                >Edit
+                </a>
                 <a href="#" class="btn btn-danger">delete</a>
             </td>
         </tr>
@@ -36,3 +43,5 @@
     </table>
 
 @endsection
+@include('kegiatan.crud.modalEditK')
+

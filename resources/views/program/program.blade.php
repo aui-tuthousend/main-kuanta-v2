@@ -22,9 +22,7 @@
 <div class="container-fluid py-2 p-5">
     @yield('indexprogram')
     <script type="text/javascript">
-
         $(document).ready(function () {
-
             $('body').on('click', '#edit-program', function () {
                 var userURL = $(this).data('url');
                 $.get(userURL, function (data) {

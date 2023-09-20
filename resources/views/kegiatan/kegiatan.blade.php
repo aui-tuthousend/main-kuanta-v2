@@ -19,5 +19,34 @@
 <div class="container-fluid py-2 p-5">
     @yield('indexkegiatan')
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('body').on('click', '#edit-kegiatan', function () {
+            var userURL = $(this).data('url');
+            $.get(userURL, function (data) {
+                console.log(data);
+                $('#editKegiatan').modal('show');
+                $('#kegiatan-id').val(data.id);
+                $('#kegiatan-judul').val(data.judul);
+                $('#kegiatan-target-int').val(data.target_int);
+                $('#kegiatan-tipe-target').val(data.tipe_target);
+                $('#kegiatan-catatan').val(data.catatan);
+                $('#kegiatan-deadline').val(data.deadline);
+                $('#kegiatan-user-name').val(data.user_name);
+                $('#kegiatan-user-id').val(data.id_user);
+                // $('#update-form').submit();
+            })
+        });
+
+    });
+</script>
+<style>
+    #kegiatan-id, #kegiatan-user-id {
+        width: 35px; /* Ganti dengan panjang yang Anda inginkan, misalnya 200px */
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+</style>
 </body>
 </html>

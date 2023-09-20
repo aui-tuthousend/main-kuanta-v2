@@ -45,8 +45,9 @@ class HomeController extends Controller
     public function indexKegiatan($id){
         $kegiatans = Program::with('kegiatan')->findOrFail($id);
         $loop=['Judul Kegiatan', 'Circle', 'Target', 'Capaian', 'Catatan', 'Username', 'Deadline', 'Status', 'Presentase Ketercapaian', 'Action'];
+        $users = User::orderBy('circle', 'ASC')->get();
 
-        return view('kegiatan.indexkegiatan', compact('loop', 'kegiatans'));
+        return view('kegiatan.indexkegiatan', compact('loop', 'kegiatans', 'users'));
     }
 }
 
