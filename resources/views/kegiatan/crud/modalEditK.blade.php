@@ -26,7 +26,7 @@
                             <div class="form-group">
                                 <label for="inputGroup1">Tipe target</label>
                                 <select class="form-select" name="kegiatan-target-new" aria-label="Default select example">
-                                    <option value="nope">Pilih Tipe Target</option>
+                                    <option value="nope">Pilih tipe target baru</option>
                                     <option value="juta">Juta</option>
                                     <option value="milyar">Milyar</option>
                                     <option value="orang">Orang</option>

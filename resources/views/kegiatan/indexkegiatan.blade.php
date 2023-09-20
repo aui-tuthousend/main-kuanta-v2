@@ -15,6 +15,7 @@
         </tr>
         </thead>
         <tbody>
+            @if($kegiatans->kegiatan->count()>0)
         @foreach($kegiatans->kegiatan as $keg)
         <tr >
             <td class="align-middle">{{$keg->judul}}</td>
@@ -39,6 +40,11 @@
             </td>
         </tr>
         @endforeach
+            @else
+                <tr>
+                    <td class="text-center" colspan="10">Belum ada kegiatan</td>
+                </tr>
+            @endif
         </tbody>
     </table>
 

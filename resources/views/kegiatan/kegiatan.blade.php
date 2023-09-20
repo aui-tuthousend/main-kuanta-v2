@@ -41,7 +41,7 @@
     });
 </script>
 <style>
-    #kegiatan-id, #kegiatan-user-id {
+    #kegiatan-id, #kegiatan-user-id, #kegiatan-aidi {
         width: 35px; /* Ganti dengan panjang yang Anda inginkan, misalnya 200px */
         background-color: transparent;
         border: none;

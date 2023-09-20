@@ -24,7 +24,7 @@
             <tr>
                 <td class="align-middle">{{$loop->iteration}}</td>
                 <td class="align-middle">{{$pro->judul}}</td>
-                <td class="align-middle">{{$pro->circle1}} {{$pro->circle2}} {{$pro->circle3}}</td>
+                <td class="align-middle">{{$pro->circle}} {{$pro->circle1}} {{$pro->circle2}}</td>
                 <td class="align-middle">{{$pro->pj}}</td>
                 <td class="align-middle">{{$pro->status}}</td>
                 <td class="align-middle">{{$pro->kegiatan->count()}}</td>
@@ -34,15 +34,14 @@
                         id="edit-program"
                         data-url="{{ route('editprogram', $pro->id) }}"
                         class="btn btn-info"
-                    >Edit
-                    </a>
+                    >Edit</a>
                     <a href="{{ route('kegiatan', $pro->id) }}" class="btn btn-warning">detail</a>
                     @if($pro->kegiatan->count() == 0)
-                        <form action="{{ route('deleteprogram', $pro->id, $pro->kegiatan->count()) }}">
-                            @csrf
-                            @method('DELETE')
-                        <a href="{{ route('deleteprogram', $pro->id, $pro->kegiatan->count()) }}" class="btn btn-danger" onclick="return confirm('Delete Program?')">delete</a>
-                        </form>
+{{--                    <form action="{{ route('deleteprogram', ['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}">--}}
+{{--                        @csrf--}}
+{{--                        @method('DELETE')--}}
+                    <a href="{{ route('deleteprogram',['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}" class="btn btn-danger" onclick="return confirm('Delete Program?')">delete</a>
+{{--                    </form>--}}
                     @endif
                 </td>
             </tr>
