@@ -16,4 +16,8 @@ class Capaian extends Model
         'fixed_capaian',
         'bulan'
     ];
+
+    public function kpis (){
+        return $this->belongsTo(KPI::class, 'id_kpi');
+    }
 }

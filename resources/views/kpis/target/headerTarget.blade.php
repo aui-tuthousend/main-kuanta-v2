@@ -13,6 +13,17 @@
 </head>
 <body>
 @include('navbar')
+
+@php
+    $dataKegiatan = [];
+
+    foreach ($kpis as $kegiatanItem) {
+        $dataKegiatan[] = [
+            'kegiatan' => $kegiatanItem,
+            'capaianBulan' => $capaian->where('id_kpi', $kegiatanItem->id)->pluck('capaian', 'bulan')->toArray()
+        ];
+    }
+@endphp
 <div class="container-fluid py-2 p-5">
     @yield('target')
 </div>

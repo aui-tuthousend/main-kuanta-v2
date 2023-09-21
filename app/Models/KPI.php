@@ -25,4 +25,8 @@ class KPI extends Model
     public function kegiatan(){
         return$this->hasMany(Kegiatan::class,'id_kpi');
     }
+
+    public function capaian(){
+        return$this->hasMany(Capaian::class,'id_kpi');
+    }
 }

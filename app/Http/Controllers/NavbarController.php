@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Capaian;
 use App\Models\KPI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,13 +23,14 @@ class NavbarController extends Controller
 
     public function indexTarget($circle){
         $cir = ['executive', 'creative technology', 'school design', 'operation', 'partnership', 'kuanta institute'];
-        $month = [1,2,3,4,5,6,7,8,9,10,11,12];
+//        $kp = KPI::find($circle);
         $kpis = KPI::where('circle', $circle)
             ->where('tipe', 'target')
             ->orderBy('created_at', 'DESC')
             ->get();
+        $capaian = Capaian::whereIn('id_kpi', $kpis->pluck('id'))->get();
 
 
-        return view('kpis.target.kpiTarget', compact('month', 'kpis', 'circle', 'cir'));
+        return view('kpis.target.kpiTarget', compact( 'kpis', 'capaian','circle', 'cir'));
     }
 }
