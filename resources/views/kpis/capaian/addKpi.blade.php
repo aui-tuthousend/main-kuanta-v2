@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('storeKPI', $circle)}}" method="post">
+                <form action="{{route('storeKPIcapaian', $circle)}}" method="post">
                     @csrf
                 <label for="jp">Judul KPI's</label>
                 <div class="form-group">
