@@ -14,6 +14,6 @@ class KPIController extends Controller
             'tipe' => 'productivity',
         ]);
 
-        return redirect(route('capaian', $circle));
+        return redirect(route('capaian', $circle))->with('KpiAdded', 'KPI berhasil ditambah');
     }
 }

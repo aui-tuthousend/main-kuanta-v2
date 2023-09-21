@@ -19,6 +19,7 @@
         </tr>
         </thead>
         <tbody>
+        @if($programs->program->count()>0)
         @foreach($programs->program as $pro)
 {{--            <tr onclick="window.location='{{ route('kegiatan', $pro->id) }}';" style="cursor: pointer;">--}}
             <tr>
@@ -48,6 +49,11 @@
                 </td>
             </tr>
         @endforeach
+        @else
+            <tr>
+                <td class="text-center" colspan="7">Belum ada Program</td>
+            </tr>
+        @endif
         </tbody>
     </table>
 
