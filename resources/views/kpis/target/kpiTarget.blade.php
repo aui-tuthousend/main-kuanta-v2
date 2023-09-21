@@ -45,17 +45,24 @@
                 @foreach($kpis as $kpi)
                 <td class="align-middle">{{$loop->iteration}}</td>
                 <td class="align-middle">{{$kpi->judul}}</td>
-                <td class="align-middle">{{$kpi->circle}}</td>
-                <td class="align-middle">{{$kpi->target}}</td>
+                    <td class="align-middle">{{$kpi->circle}}</td>
+                    <td class="align-middle">{{$kpi->target}}</td>
+                    <td class="align-middle">{{$kpi->bulan_1}}</td>
+                    <td class="align-middle">{{$kpi->bulan_2}}</td>
+                    <td class="align-middle">{{$kpi->bulan_3}}</td>
+                    <td class="align-middle">{{$kpi->bulan_4}}</td>
+                    <td class="align-middle">{{$kpi->bulan_5}}</td>
+                    <td class="align-middle">{{$kpi->bulan_6}}</td>
+                    <td class="align-middle">{{$kpi->bulan_7}}</td>
+                    <td class="align-middle">{{$kpi->bulan_8}}</td>
+                    <td class="align-middle">{{$kpi->bulan_9}}</td>
+                    <td class="align-middle">{{$kpi->bulan_10}}</td>
+                    <td class="align-middle">{{$kpi->bulan_11}}</td>
+                    <td class="align-middle">{{$kpi->bulan_12}}</td>
                 @endforeach
-                    @foreach ($dataKegiatan as $item)
-                @for ($bulan = 1; $bulan <= 12; $bulan++)
-                    <td>{{ $item['capaianBulan'][$bulan] ?? 'N/A' }}</td>
-                @endfor
-        @endforeach
             @else
                 <tr>
-                    <td class="text-center" colspan="16">Belum ada kegiatan</td>
+                    <td class="text-center" colspan="16">Belum ada KPI's</td>
                 </tr>
             @endif
         </tr>

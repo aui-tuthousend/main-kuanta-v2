@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KPI;
+use App\Models\KPItarget;
 use Illuminate\Http\Request;
 
 class KPIController extends Controller
@@ -21,15 +22,14 @@ class KPIController extends Controller
         $tar = $request->input('kpi-target-int');
         $get = $request->input('kpi-tipe-target');
         $target = $tar. " " .$get;
-        $kpi = KPI::create([
+        $kpi = KPItarget::create([
             'judul' => $request->input('kpi-judul'),
             'target_int' => $tar,
             'tipe_target' => $get,
             'target' => $target,
             'circle' => $circle,
-            'tipe' => 'target',
         ]);
 
-        return redirect(route('target', $circle))->with('KpiAdded', 'KPI target berhasil ditambah');
+        return redirect(route('target', $circle))->with('KpiTargetAdded', 'KPI target berhasil ditambah');
     }
 }
