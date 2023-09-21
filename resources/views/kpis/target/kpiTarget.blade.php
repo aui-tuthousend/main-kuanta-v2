@@ -6,7 +6,7 @@
         </div>
         <div class="d-flex flex-row ">
             @if(\Illuminate\Support\Facades\Auth::user()->circle=="admin")
-                <button type="button" class="btn btn-primary me-1" data-toggle="modal" data-target="#addKpi">
+                <button type="button" class="btn btn-primary me-1" data-toggle="modal" data-target="#addKpiTarget">
                     Add +
                 </button>
             @endif
@@ -63,3 +63,4 @@
     </table>
 
 @endsection
+@include('kpis.target.addKpiTarget')

@@ -50,6 +50,7 @@ Route::controller(\App\Http\Controllers\KegiatanController::class)->group(functi
 })->middleware(['auth']);
 
     Route::controller(\App\Http\Controllers\KPIController::class)->group(function () {
-    Route::post('/kpiscapaian/{circle}/add', 'storeCapaian')->name('storeKPI');
+        Route::post('/kpiscapaian/{circle}/add', 'storeKPIcapaian')->name('storeKPI');
+        Route::post('/kpiscapaian/{circle}/add', 'storeKPItarget')->name('storeKPItarget');
 
 })->middleware(['auth']);

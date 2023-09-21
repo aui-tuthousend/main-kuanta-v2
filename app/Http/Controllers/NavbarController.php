@@ -23,7 +23,6 @@ class NavbarController extends Controller
 
     public function indexTarget($circle){
         $cir = ['executive', 'creative technology', 'school design', 'operation', 'partnership', 'kuanta institute'];
-//        $kp = KPI::find($circle);
         $kpis = KPI::where('circle', $circle)
             ->where('tipe', 'target')
             ->orderBy('created_at', 'DESC')

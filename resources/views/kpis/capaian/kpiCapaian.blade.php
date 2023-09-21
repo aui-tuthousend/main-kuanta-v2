@@ -37,5 +37,5 @@
 
 
 
-    @include('homepage.modal.addKpi')
+@include('kpis.capaian.addKpi')
 @endsection
