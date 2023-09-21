@@ -47,8 +47,9 @@ Route::controller(\App\Http\Controllers\KegiatanController::class)->group(functi
 
     Route::delete('/{id}/kegiatan/delete', 'delete')->name('deleteKegiatan');
 
-
-
-
 })->middleware(['auth']);
 
+    Route::controller(\App\Http\Controllers\KPIController::class)->group(function () {
+    Route::post('/kpiscapaian/{circle}/add', 'storeCapaian')->name('storeKPI');
+
+})->middleware(['auth']);

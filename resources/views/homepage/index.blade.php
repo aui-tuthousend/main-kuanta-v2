@@ -3,6 +3,7 @@
     <h1>Halo {{\Illuminate\Support\Facades\Auth::user()->name}} </h1>
     <div class="d-flex align-items-center justify-content-between">
         <h2 class="mb-0">List Kegiatan</h2>
+
         {{--        <a href='/addtask' class="btn btn-dark">Add Task + </a>--}}
     </div>
     <table class="table table-hover table-bordered mt-3">
