@@ -35,10 +35,10 @@
                     <a class="nav-link" href='#'>Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href='{{route('capaian', \Illuminate\Support\Facades\Auth::user()->circle)}}'>KPI's Capaian</a>
+                    <a class="nav-link" href='{{route('capaian', Auth::user()->circle)}}'>KPI's Capaian</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href='{{route('target', "CT")}}'>KPI's Target</a>
+                    <a class="nav-link" href='{{route('target', Auth::user()->circle)}}'>KPI's Target</a>
                 </li>
                 <li class="nav-item">
 {{--                    <a class="nav-link" href='{{route('dashb', "CT")}}'>Dashboard</a>--}}

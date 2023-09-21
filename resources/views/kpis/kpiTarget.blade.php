@@ -7,18 +7,16 @@
 <div class="container-fluid py-2 p-5">
 
     <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
-        <h2>List KPI's Target Circle Antum</h2>
+        <h2>List KPI's Target {{$circle}}</h2>
         {{--        if auth == executive or admin --}}
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Other Circle
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Creative Technology</a></li>
-                <li><a class="dropdown-item" href="#">Kuanta Institute</a></li>
-                <li><a class="dropdown-item" href="#">Operation</a></li>
-                <li><a class="dropdown-item" href="#">Partnership</a></li>
-                <li><a class="dropdown-item" href="#">School Design</a></li>
+                @foreach($cir as $c)
+                    <li><a class="dropdown-item" href="{{route('target', $c)}}">{{$c}}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>
@@ -40,13 +38,21 @@
         </thead>
         <tbody>
         <tr style="text-align: center;">
-            <td class="align-middle">1</td>
-            <td class="align-middle">ini judul kpi</td>
-            <td class="align-middle">CKI</td>
-            <td class="align-middle">10M</td>
+            @if($kpis->count()>0)
+            @foreach($kpis as $kpi)
+            <td class="align-middle">{{$loop->iteration}}</td>
+            <td class="align-middle">{{$kpi->judul}}</td>
+            <td class="align-middle">{{$kpi->circle}}</td>
+            <td class="align-middle">{{$kpi->target}}</td>
+            @endforeach
             @foreach($month as $num)
                 <td class="align-middle">{{$num}}</td>
             @endforeach
+            @else
+            <tr>
+                <td class="text-center" colspan="16">Belum ada kegiatan</td>
+            </tr>
+            @endif
         </tr>
         </tbody>
     </table>
