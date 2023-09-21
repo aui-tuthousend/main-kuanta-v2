@@ -17,7 +17,7 @@ class NavbarController extends Controller
             ->get();
 
 
-        return view('kpis.kpiCapaian', compact( 'kpis', 'cir', 'circle'));
+        return view('kpis.capaian.kpiCapaian', compact( 'kpis', 'cir', 'circle'));
     }
 
     public function indexTarget($circle){
@@ -29,6 +29,6 @@ class NavbarController extends Controller
             ->get();
 
 
-        return view('kpis.kpiTarget', compact('month', 'kpis', 'circle', 'cir'));
+        return view('kpis.target.kpiTarget', compact('month', 'kpis', 'circle', 'cir'));
     }
 }
