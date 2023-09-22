@@ -2,7 +2,7 @@
 @section('add')
 <title>Add Program</title>
 <div class="container py-3">
-    <form action="{{ route('storeprogram', $kpi->id) }}" method="POST">
+    <form action="{{ route('storeprogram', $kpi->id) }}" method="POST" onsubmit="return validateForm()">
         @csrf
     <label for="Form1">Judul KPI's</label>
     <div class="form-group">
@@ -32,5 +32,17 @@
     </form>
 
 </div>
+<script>
+    function validateForm() {
+        var selectedUser = document.getElementById("pj");
+
+        if (selectedUser.value == "Pilih User") {
+            alert("Silakan pilih user terlebih dahulu.");
+            return false; // Menghentikan pengiriman formulir
+        }
+
+        return true; // Lanjutkan dengan pengiriman formulir
+    }
+</script>
 
 @endsection

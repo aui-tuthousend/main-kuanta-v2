@@ -29,7 +29,7 @@
         <tr style="text-align: center;">
             <th rowspan="2" >No</th>
             <th rowspan="2" >Judul</th>
-            <th rowspan="2" >Circle</th>
+{{--            <th rowspan="2" >Circle</th>--}}
             <th rowspan="2" >Target</th>
             <th colspan="12">Capaian/bulan</th>
         </tr>
@@ -45,7 +45,7 @@
                 @foreach($kpis as $kpi)
                 <td class="align-middle">{{$loop->iteration}}</td>
                 <td class="align-middle">{{$kpi->judul}}</td>
-                    <td class="align-middle">{{$kpi->circle}}</td>
+{{--                    <td class="align-middle">{{$kpi->circle}}</td>--}}
                     <td class="align-middle">{{$kpi->target}}</td>
                     <td class="align-middle">{{$kpi->bulan_1}}</td>
                     <td class="align-middle">{{$kpi->bulan_2}}</td>

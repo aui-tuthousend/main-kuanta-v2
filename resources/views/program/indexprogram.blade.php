@@ -42,7 +42,7 @@
                         <form action="{{ route('deleteprogram', ['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" id="del-button-p" class="btn btn-danger">Delete</button>
+                            <button type="submit" id="del-button-p" class="btn btn-danger" onclick="return confirm('Delete Program?')">Delete</button>
                         </form>
                     @endif
                     </div>

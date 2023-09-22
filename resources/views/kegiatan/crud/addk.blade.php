@@ -1,7 +1,7 @@
 @include('navbar')
 <title>Add Kegiatan</title>
 <div class="container py-3">
-    <form action="{{ route('storekegiatan', $program->id) }}" method="POST">
+    <form action="{{ route('storekegiatan', $program->id) }}" method="POST" onsubmit="return validateForm()">
         @csrf
     <label for="selectedUser">Pilih User</label>
     <select class="form-select" name="selectedUser" id="selectedUser" aria-label="Default select example" required>
@@ -46,5 +46,17 @@
     </form>
 
 
+    <script>
+        function validateForm() {
+            var selectedUser = document.getElementById("selectedUser");
+
+            if (selectedUser.value == "Pilih User") {
+                alert("Silakan pilih user terlebih dahulu");
+                return false; // Menghentikan pengiriman formulir
+            }
+
+            return true; // Lanjutkan dengan pengiriman formulir
+        }
+    </script>
 
 </div>
