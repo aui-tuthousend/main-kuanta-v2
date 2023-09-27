@@ -14,8 +14,21 @@
     </div>
     <label for="Form2">Judul</label>
     <div class="form-group">
-        <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan Judul Program">
+        <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan Judul Program" required>
     </div>
+        <label for="Form2">Target</label>
+        <div class="form-group">
+            <input type="text" class="form-control" name="target-int" placeholder="Masukkan Quantity Target Program" required>
+        </div>
+        <label for="tt">Pilih Tipe Target</label>
+        <select class="form-select" name="tt" id="tt" aria-label="Default select example">
+            <option value="juta">Juta</option>
+            <option value="milyar">Milyar</option>
+            <option value="orang">Orang</option>
+            <option value="orang/bulan">Orang/bulan</option>
+            <option value="produk">Produk</option>
+            <option value="%">Persentase</option>
+        </select>
 
         <h6 class="pt-2">PJ:</h6>
         <select class="form-select" name="pj" id="pj" aria-label="Default select example">
@@ -32,17 +45,5 @@
     </form>
 
 </div>
-<script>
-    function validateForm() {
-        var selectedUser = document.getElementById("pj");
-
-        if (selectedUser.value == "Pilih User") {
-            alert("Silakan pilih user terlebih dahulu.");
-            return false; // Menghentikan pengiriman formulir
-        }
-
-        return true; // Lanjutkan dengan pengiriman formulir
-    }
-</script>
 
 @endsection

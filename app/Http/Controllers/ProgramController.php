@@ -20,13 +20,20 @@ class ProgramController extends Controller
     }
 
     public function store(Request $request, $id){
+        $tar = $request->input('target-int');
+        $get = $request->input('tt');
+        $target = $tar . " " . $get;
+
         $program = Program::create([
             'id_kpi' => $id,
             'judul_kpi' => $request->input('judulKpi'),
             'circle' => $request->input('circle'),
             'circle1' => $request->input('circle'),
             'judul' => $request->input('judul'),
-            'pj' => $request->input('pj')
+            'pj' => $request->input('pj'),
+            'target_int' => $tar,
+            'tipe_target' => $get,
+            'target' => $target,
         ]);
 
         return redirect()->route('program', $id)->with('ProgramAdded', 'Program Berhasil Ditambah');
