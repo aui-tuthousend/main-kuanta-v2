@@ -94,6 +94,9 @@ class KegiatanController extends Controller
         $caapaian = $capai ." ".$an;
 
         $pro = Program::find($kegiatan->id_program);
+        (float)$ket = $pro->kegiatan()->sum('achieved');
+        $keg = $pro->kegiatan()->count();
+        (float)$ketKeg = ($ket / $keg);
 
         $kegiatan->update([
             'capaian' => $capai,
@@ -104,6 +107,7 @@ class KegiatanController extends Controller
 
         $pro->update([
             'status' => "on going",
+            'capaian_kegiatan' => $ketKeg,
         ]);
         return redirect('/home')->with('capaianUpdated', 'Capaian berhasil diupdate!');
     }

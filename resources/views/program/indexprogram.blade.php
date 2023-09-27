@@ -16,6 +16,7 @@
             <th>Target</th>
             <th>Capaian</th>
             <th>Status</th>
+            <th>Capaian Kegiatan</th>
             <th>Jumlah Kegiatan</th>
             <th>Action</th>
         </tr>
@@ -32,6 +33,7 @@
                 <td class="align-middle">{{$pro->target}}</td>
                 <td class="align-middle">{{$pro->capaian}} {{$pro->tipe_target}}</td>
                 <td class="align-middle">{{$pro->status}}</td>
+                <td class="align-middle">{{$pro->capaian_kegiatan}} %</td>
                 <td class="align-middle">{{$pro->kegiatan->count()}}</td>
                 <td class="align-middle">
                     <div class="d-flex align-items-center">
