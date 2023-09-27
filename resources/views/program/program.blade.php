@@ -45,7 +45,7 @@
                 $.get(userURL, function (data) {
                     console.log(data);
                     $('#editCpProgram').modal('show');
-                    $('#program-id').val(data.id);
+                    $('#program-idi').val(data.id);
                     $('#program-target').val(data.target);
                     $('#program-capaian').val(data.capaian);
                     $('#program-tipe-target').val(data.tipe_target);
@@ -57,7 +57,7 @@
         });
     </script>
     <style>
-        #program-id {
+        #program-id, #program-idi {
             width: 35px; /* Ganti dengan panjang yang Anda inginkan, misalnya 200px */
             background-color: transparent;
             border: none;

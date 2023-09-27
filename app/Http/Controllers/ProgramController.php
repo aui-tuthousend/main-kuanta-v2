@@ -85,7 +85,13 @@ class ProgramController extends Controller
     }
 
     public function storeEditCp(Request $request, $idi){
+        $id = (int)$request->input('program-id');
+        $prog = Program::find($id);
+        $prog->update([
+            'capaian' => $request->input('program-capaian'),
+        ]);
 
+        return redirect()->back();
     }
 
 

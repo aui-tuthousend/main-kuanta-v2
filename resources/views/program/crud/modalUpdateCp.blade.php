@@ -12,7 +12,7 @@
                     @csrf
                     <div class="d-flex align-items-center justify-content-between">
                         <label for="Form1">Target Program</label>
-                        <input type="text" class="form-control" name="program-id" id="program-id" readonly>
+                        <input type="text" class="form-control" name="program-id" id="program-idi" readonly>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="program-target" readonly>
