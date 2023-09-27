@@ -31,8 +31,9 @@
                     $('#program-id').val(data.id);
                     $('#program-judul').val(data.judul);
                     $('#program-circle').val(data.circle);
+                    $('#program-targett').val(data.target);
+                    $('#program-tt').val(data.tipe_target);
                     $('#program-pj').val(data.pj);
-                    // $('#update-form').submit();
                 })
             });
 

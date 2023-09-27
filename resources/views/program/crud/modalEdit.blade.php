@@ -41,6 +41,36 @@
                             </div>
                         </div>
                     </div>
+
+                    <label for="inputGroup1">Quantity Target</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="program-target-int" id="program-targett">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputGroup1">Tipe Target</label>
+                                <select class="form-select" name="program-tt-new" aria-label="Default select example">
+                                    <option value="nope">Pilih Tipe Target</option>
+                                    <option value="juta">Juta</option>
+                                    <option value="milyar">Milyar</option>
+                                    <option value="orang">Orang</option>
+                                    <option value="orang/bulan">Orang/bulan</option>
+                                    <option value="produk">Produk</option>
+                                    <option value="%">Persentase</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputGroup2" class="sr-only">tipe target saat ini</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="program-tt-old" id="program-tt" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

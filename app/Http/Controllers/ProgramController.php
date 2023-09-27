@@ -45,6 +45,8 @@ class ProgramController extends Controller
             'id' => $pro->id,
             'judul' => $pro->judul,
             'circle' => $pro->circle,
+            'target' => $pro->target_int,
+            'tipe_target' => $pro->tipe_target,
             'pj' => $pro->pj,
 
         ];
