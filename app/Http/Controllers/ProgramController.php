@@ -48,6 +48,7 @@ class ProgramController extends Controller
     public function editCpProgram($id){
         $pro = Program::find($id);
         $data = [
+            'id' => $pro->id,
             'target' => $pro->target,
             'tipe_target' => $pro->tipe_target,
             'capaian' => $pro->capaian,

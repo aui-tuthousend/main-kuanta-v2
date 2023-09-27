@@ -54,7 +54,7 @@
                             id="edit-cp-program"
                             data-url="{{ route('editcpprogram', $pro->id) }}"
                             class="btn btn-info"
-                        >update capaian</a>
+                        >up</a>
                     </div>
                 </td>
             </tr>
