@@ -49,11 +49,12 @@
                             <button type="submit" id="del-button-p" class="btn btn-danger" onclick="return confirm('Delete Program?')">Delete</button>
                         </form>
                     @endif
-                        <form action="{{ route('deleteprogram', ['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" id="del-button-p" class="btn btn-danger" onclick="return confirm('Delete Program?')">Update Capaiann</button>
-                        </form>
+                        <a
+                            href="javascript:void(0)"
+                            id="edit-cp-program"
+                            data-url="{{ route('editcpprogram', $pro->id) }}"
+                            class="btn btn-info"
+                        >update capaian</a>
                     </div>
                 </td>
             </tr>
@@ -68,3 +69,4 @@
 
 @endsection
 @include('program.crud.modalEdit')
+@include('program.crud.modalUpdateCp')

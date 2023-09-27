@@ -27,7 +27,9 @@ Route::controller(\App\Http\Controllers\ProgramController::class)->group(functio
     Route::post('/{kpis}/program/addprogram', "store")->name('storeprogram');
 
     Route::get('/{id}/program/edit', 'editProgram')->name('editprogram');
+    Route::get('/{id}/program/edit', 'editCpProgram')->name('editcpprogram');
     Route::post('/{id}/program/edit', 'storeEdit')->name('storeEdit');
+    Route::post('/{id}/program/updatecp', 'storeEditCp')->name('updateCpProgram');
 
     Route::delete('/{id}/program/delete/{key}', 'delete')->name('deleteprogram');
 

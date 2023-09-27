@@ -39,7 +39,16 @@ class ProgramController extends Controller
             'judul' => $pro->judul,
             'circle' => $pro->circle,
             'pj' => $pro->pj,
-            'target_int' => $pro->target_int,
+
+        ];
+
+        return response()->json($data);
+    }
+
+    public function editCpProgram($id){
+        $pro = Program::find($id);
+        $data = [
+            'target' => $pro->target,
             'tipe_target' => $pro->tipe_target,
             'capaian' => $pro->capaian,
         ];
@@ -66,6 +75,11 @@ class ProgramController extends Controller
 
         return redirect()->back();
     }
+
+    public function storeEditCp(Request $request, $idi){
+
+    }
+
 
     public function delete($id, $key){
         $prog = Program::find($id);

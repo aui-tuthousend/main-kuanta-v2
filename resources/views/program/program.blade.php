@@ -32,9 +32,23 @@
                     $('#program-judul').val(data.judul);
                     $('#program-circle').val(data.circle);
                     $('#program-pj').val(data.pj);
-                    $('#program-target-int').val(data.target_int);
-                    $('#program-tipe-target').val(data.tipe_target);
+                    // $('#update-form').submit();
+                })
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('body').on('click', '#edit-cp-program', function () {
+                var userURL = $(this).data('url');
+                $.get(userURL, function (data) {
+                    console.log(data);
+                    $('#editCpProgram').modal('show');
+                    $('#program-id').val(data.id);
+                    $('#program-target').val(data.target);
                     $('#program-capaian').val(data.capaian);
+                    $('#program-tipe-target').val(data.tipe_target);
 
                     // $('#update-form').submit();
                 })
