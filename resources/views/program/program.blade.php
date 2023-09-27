@@ -32,6 +32,9 @@
                     $('#program-judul').val(data.judul);
                     $('#program-circle').val(data.circle);
                     $('#program-pj').val(data.pj);
+                    $('#program-target-int').val(data.target_int);
+                    $('#program-tipe-target').val(data.tipe_target);
+                    $('#program-capaian').val(data.capaian);
 
                     // $('#update-form').submit();
                 })
@@ -46,6 +49,7 @@
             border: none;
             color: white;
         }
+
         #del-button-p {
             margin-top: 17px;
         }

@@ -13,6 +13,8 @@
             <th>Judul Program</th>
             <th>Circle</th>
             <th>PJ</th>
+            <th>Target</th>
+            <th>Capaian</th>
             <th>Status</th>
             <th>Jumlah Kegiatan</th>
             <th>Action</th>
@@ -27,6 +29,8 @@
                 <td class="align-middle">{{$pro->judul}}</td>
                 <td class="align-middle">{{$pro->circle}} {{$pro->circle1}} {{$pro->circle2}}</td>
                 <td class="align-middle">{{$pro->pj}}</td>
+                <td class="align-middle">{{$pro->target}}</td>
+                <td class="align-middle">{{$pro->capaian}} {{$pro->tipe_target}}</td>
                 <td class="align-middle">{{$pro->status}}</td>
                 <td class="align-middle">{{$pro->kegiatan->count()}}</td>
                 <td class="align-middle">
@@ -45,6 +49,11 @@
                             <button type="submit" id="del-button-p" class="btn btn-danger" onclick="return confirm('Delete Program?')">Delete</button>
                         </form>
                     @endif
+                        <form action="{{ route('deleteprogram', ['id' => $pro->id, 'key' => $pro->kegiatan->count()]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" id="del-button-p" class="btn btn-danger" onclick="return confirm('Delete Program?')">Update Capaiann</button>
+                        </form>
                     </div>
                 </td>
             </tr>

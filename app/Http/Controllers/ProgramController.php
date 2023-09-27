@@ -39,6 +39,9 @@ class ProgramController extends Controller
             'judul' => $pro->judul,
             'circle' => $pro->circle,
             'pj' => $pro->pj,
+            'target_int' => $pro->target_int,
+            'tipe_target' => $pro->tipe_target,
+            'capaian' => $pro->capaian,
         ];
 
         return response()->json($data);

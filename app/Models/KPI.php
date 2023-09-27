@@ -14,6 +14,8 @@ class KPI extends Model
         'target_int',
         'target',
         'tipe_target',
+        'capaian',
+        'capaian_program',
         'circle',
         'tipe'
     ];
